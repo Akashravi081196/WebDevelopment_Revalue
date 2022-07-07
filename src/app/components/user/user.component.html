@@ -1,0 +1,44 @@
+<div class="container buy-button" style="text-align: center;">
+    <button class="register" (click)="addProduct()">Add Product</button>
+</div>
+
+<div class="all">
+    <div class="cards">
+      <div class="card shadow-1" *ngFor="let product of products">
+        <div class="container">
+            <p *ngIf="!product.isEditable">{{ product.name }}<span *ngIf="!product.isEditable">€{{ product.price }}</span></p>
+            <a *ngIf="!product.isEditable" style="padding-bottom: 50px;">{{ product.description }}</a>
+            
+
+            <p *ngIf="product.isEditable"><input type="text" [(ngModel)]="product.name" name="name" placeholder="Product Name"><span *ngIf="product.isEditable"><input type="text" [(ngModel)]="product.price" name="price" placeholder="Price"></span></p>
+            <a *ngIf="product.isEditable" style="padding-bottom: 50px;"><input type="text" [(ngModel)]="product.description" name="description" placeholder="description with contact"></a><br>
+            <div class="file" style="height: 100PX;">
+             <img src="url" height="200"><br>
+             <input type="file"> 
+             </div>
+            <div class="buy-button" style="padding-top: 50px;">
+                <button *ngIf="!product.isEditable" class="btn register" (click)="deleteProduct(product)">Delete</button>
+                <button *ngIf="!product.isEditable" class="btn login" (click)="editProduct(product)">Edit</button>
+                <button *ngIf="product.isEditable" class="btn register" (click)="saveProduct(product)">Save</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+$('.card').on('click', function() {
+  if ($(this).hasClass('open')) {
+    $('.card').removeClass('open');
+    $('.card').removeClass('shadow-2');
+    $(this).addClass('shadow-1');
+    return false;
+  } else {
+    $('.card').removeClass('open');
+    $('.card').removeClass('shadow-2');
+    $(this).addClass('open');
+    $(this).addClass('shadow-2');
+  }
+});
+</script>
+  <!-- END .all -->

@@ -1,0 +1,16 @@
+<nav class="flex align-center">
+    <p><span>REVALUE</span></p>
+    <ul>
+      <li class="big-screens">
+        <a class="btn login" href="#">Home</a>
+        <button  class="btn login"  (click)="onAbout()">About Us</button>
+        <button  class="btn login" (click)="onClick()">Register</button>
+        <button *ngIf="!loginService.isLoggedIn()" class="btn login" (click)="onLogin()">Log In</button>
+        <button *ngIf="loginService.isLoggedIn()" class="btn register" (click)="onDashBoard()">Dashboard</button>
+        <button *ngIf="loginService.isLoggedIn()" class="btn login" (click)="onLogout()">Log Out</button>
+      </li> 
+      <li class="small-screens">
+        <i class="fa-solid fa-bars"></i>
+      </li>
+    </ul>
+  </nav>

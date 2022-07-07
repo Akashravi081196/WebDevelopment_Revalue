@@ -1,0 +1,14 @@
+<div class="all">
+  <div class="cards">
+    <div class="card shadow-1" *ngFor="let product of products">
+      <div class="container">
+          <p>{{ product.name }}<span>€{{ product.price }}</span></p>
+          <a style="padding-bottom: 50px;">{{ product.description }}</a>
+
+          <div class="buy-button" style="padding-top: 50px;">
+              <button  class="btn login" class="btn register" (click)="onContact()">CONTACT</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="card shadow-1" *ngFor="let product of products">
+    <div class="container">
+        <p>{{ product.name }}<span>€{{ product.price }}</span></p>
+        <a style="padding-bottom: 50px;">{{ product.description }}</a>
+    </div>
+</div>
